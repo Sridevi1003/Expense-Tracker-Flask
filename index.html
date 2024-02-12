@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<style>
+        body {
+            background: linear-gradient(to right, #3494e6, #ec6ead);
+            font-family: 'Arial', sans-serif;
+            color: black;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #3494e6;
+            padding: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px; /* Increase font size */
+        }
+
+        input[type="text"] {
+            padding: 10px; /* Increase box size */
+            font-size: 16px; /* Increase font size */
+            width: 300px; /* Increase box width */
+        }
+
+        button {
+            background-color: purple;
+            color: black;
+            padding: 15px 30px; /* Increase box size */
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 18px; /* Increase font size */
+        }
+
+        a {
+            color:purple ;
+            text-decoration: none;
+            margin-top: 20px;
+            display: block;
+            font-size: 18px; /* Increase font size */
+        }
+
+        /* Increase expense input box size */
+        input[name="expense"] {
+            padding: 10px; /* Increase box size */
+            font-size: 16px; /* Increase font size */
+            width: 300px; /* Increase box width */
+        }
+    </style>
+<body>
+    <h1>Expense Tracker</h1>
+    <form method="POST" action="/submit">
+        {{ form.csrf_token }}
+        <label for="date">Date:</label>
+        {{ form.date() }}
+        <br>
+        <label for="name">Name:</label>
+        {{ form.name() }}
+        <br>
+        <label for="title">Title:</label>
+        {{ form.title() }}
+        <br>
+        <label for="expense">Expense:</label>
+        {{ form.expense() }}
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/view">View Expenses</a>
+</body>
+</html>
